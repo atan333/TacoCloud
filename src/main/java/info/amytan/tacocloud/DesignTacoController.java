@@ -29,7 +29,7 @@ public class DesignTacoController {
                 new Ingredient("CHED", "Cheddar", Type.CHEESE),
                 new Ingredient("JACK", "Monterrey Jack", Type.CHEESE),
                 new Ingredient("SLSA", "Salsa", Type.SAUCE),
-                new Ingredient("MOZZ", "Mozzarella", Type.CHEESE)
+                new Ingredient("SRCR", "Sour Cream", Type.SAUCE)
         );
 
         Type[] types = Ingredient.Type.values();
@@ -56,7 +56,7 @@ public class DesignTacoController {
     @PostMapping
     public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
         tacoOrder.addTaco(taco);
-        log.info("Proccessing taco: {}", taco);
+        log.info("Processing taco: {}", taco);
 
         return "redirect:orders/current";
     }
