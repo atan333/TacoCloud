@@ -23,7 +23,7 @@ public class OrderController {
     @PostMapping
     public String processOrder(@Valid TacoOrder order, Errors errors, SessionStatus sessionStatus) {
         if (errors.hasErrors()) {
-            return "design-a-taco";
+            return "orderForm";
         }
 
         log.info("Order submitted: {}", order);
